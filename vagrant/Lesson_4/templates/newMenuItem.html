@@ -1,8 +1,10 @@
 <html>
 <head>
 	<title></title>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+	<div class='pane'>
 	<h1> New Menu Item </h1>
 
 	<form action='{{ url_for('newMenuItem', restaurant_id=restaurant_id) }}' method='post'>
@@ -11,15 +13,16 @@
 		<p>Description:</p><textarea rows='3' columns='150' name='description' ></textarea><br>
 		<p>Price:</p><input type='text' size='8' name='price' ><br>		
 		<p>Course:</p>
-		<input type="radio" name="course" value="Entree" checked> Entree<br>
-		<input type="radio" name="course" value="Appetizer"> Appetizer<br>
-		<input type="radio" name="course" value="Dessert"> Dessert<br>
-		<input type="radio" name="course" value="Beverage"> Beverage<br>
+		<div class="course"><input type="radio" name="course" value="Entree" checked> Entree</div><br>
+		<div class="course"><input type="radio" name="course" value="Appetizer"> Appetizer</div><br>
+		<div class="course"><input type="radio" name="course" value="Dessert"> Dessert</div><br>
+		<div class="course"><input type="radio" name="course" value="Beverage"> Beverage</div><br>
 		<br><br>
 		<input type='submit' value='Create'>
 		<a href="{{ url_for('showMenu',restaurant_id=restaurant_id) }}">Cancel</a>
 
 	</form>
+</div>
 
 </body>
 </html>
