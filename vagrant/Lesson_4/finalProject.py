@@ -1,4 +1,4 @@
-from flask import flask
+from flask import Flask
 app = Flask(__name__)
 
 
@@ -20,7 +20,7 @@ def editRestaurants(restaurant_id):
 def deleteRestaurants(restaurant_id):
 	return "This page will be for deleting restaurant %s" % restaurant_id
 
-@app.route('/restaurants/<int:restaurant_id>/')
+@app.route('/restaurants/<int:restaurant_id>')
 @app.route('/restaurants/<int:restaurant_id>/menu')
 def showMenu(restaurant_id):
 	return "This page is the menu for restaurant %s" % restaurant_id
