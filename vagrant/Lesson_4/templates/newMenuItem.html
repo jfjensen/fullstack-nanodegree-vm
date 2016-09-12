@@ -7,10 +7,17 @@
 
 	<form action='{{ url_for('newMenuItem', restaurant_id=restaurant_id) }}' method='post'>
 
-		<p>Name:</p>
-			<input type='text' size='30' name='name' >
+		<p>Name:</p><input type='text' size='40' name='name' ><br>
+		<p>Description:</p><textarea rows='3' columns='150' name='description' ></textarea><br>
+		<p>Price:</p><input type='text' size='8' name='price' ><br>		
+		<p>Course:</p>
+		<input type="radio" name="course" value="Entree" checked> Entree<br>
+		<input type="radio" name="course" value="Appetizer"> Appetizer<br>
+		<input type="radio" name="course" value="Dessert"> Dessert<br>
+		<input type="radio" name="course" value="Beverage"> Beverage<br>
+		<br><br>
 		<input type='submit' value='Create'>
-		<a href="#">Cancel</a>
+		<a href="{{ url_for('showMenu',restaurant_id=restaurant_id) }}">Cancel</a>
 
 	</form>
 
